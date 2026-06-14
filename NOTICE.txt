@@ -1,98 +1,106 @@
 Oyster Programming Language
 Copyright (c) 2026 Daniil Kranchev
 Licensed under the MIT License.
+See the LICENSE file for full license terms.
 
 =============================================================================
-== Primary Author ==
+== Project Information ==
 =============================================================================
 
-Daniil Kranchev
+Project Name: Oyster Programming Language
+Description: A dynamic, Perl-inspired scripting language
+Homepage: https://github.com/denrav2019/Oyster-v0.1.0
+License: MIT
+
+=============================================================================
+== Authors ==
+=============================================================================
+
+Daniil Kranchev (denrav2019)
 Email: nnikus2017@gmail.com
-GitHub: https://github.com/daniil-kranchev
-
-=============================================================================
-== Special Thanks & Inspiration ==
-=============================================================================
-
-The Oyster language was inspired by:
-
-- Perl (Larry Wall)
-  The original Perl language that inspired Oyster's philosophy and syntax.
-  https://www.perl.org/
-
-- Lua (Roberto Ierusalimschy)
-  For the lightweight VM design concepts.
-  https://www.lua.org/
-
-- Python (Guido van Rossum)
-  For the readable syntax patterns and simplicity philosophy.
-  https://www.python.org/
-
-- Rust (Mozilla / Rust Foundation)
-  For memory safety concepts and modern tooling ideas.
-  https://www.rust-lang.org/
-
-=============================================================================
-== Development Assistance ==
-=============================================================================
-
-AI programming assistance (Large Language Model) - Assisted with:
-  • Code generation and architecture design
-  • Documentation writing
-  • Real-time development support during the creation of:
-    - Oyster compiler
-    - Virtual Machine
-    - Standard library (regex, io, net, math, os, json)
-    - Debugger
-    - Tooling and CLI
+GitHub: https://github.com/denrav2019
 
 =============================================================================
 == Third-Party Software ==
 =============================================================================
 
-This software uses the following open source components:
+This product includes the following open source software components:
 
 1. PCRE2 (Perl Compatible Regular Expressions)
+   Version: 10.42 (or later)
    Copyright (c) 1997-2023 University of Cambridge
    License: BSD 3-Clause
-   Used for: Regular expression support in regex module
-   Website: https://www.pcre.org/
+   Used in: regex module for pattern matching
+   Source: https://www.pcre.org/
+   Disclaimer: This software is not affiliated with or endorsed by the University of Cambridge.
 
 2. Standard C Library (libc)
    Part of the GNU C Library (glibc) or musl libc
-   License: LGPL / MIT
-   Used for: Core system operations
+   License: LGPL v2.1 / MIT
+   Used for: Core system operations (file I/O, memory management, etc.)
+
+=============================================================================
+== Inspiration & Special Thanks ==
+=============================================================================
+
+The Oyster language draws inspiration from the following projects:
+
+- Perl (Larry Wall / Perl Foundation)
+  For the original Perl language that inspired Oyster's syntax and philosophy.
+  Website: https://www.perl.org/
+
+- Lua (Roberto Ierusalimschy / PUC-Rio)
+  For the lightweight VM design concepts.
+  Website: https://www.lua.org/
+
+- Python (Guido van Rossum / Python Software Foundation)
+  For the readable syntax patterns and simplicity philosophy.
+  Website: https://www.python.org/
+
+- Rust (Mozilla / Rust Foundation)
+  For the memory safety concepts and modern tooling ideas.
+  Website: https://www.rust-lang.org/
+
+Special thanks to:
+- The open source community for providing tools, libraries, and inspiration
+- AI programming assistance for development acceleration during prototyping
 
 =============================================================================
 == Build Dependencies ==
 =============================================================================
 
-- GCC (GNU Compiler Collection) or Clang - C compiler
+To build Oyster from source, the following tools are required:
+
+- GCC (GNU Compiler Collection) or Clang - C compiler (C11 standard)
 - GNU Make - Build system
 - PCRE2 development libraries (libpcre2-8-dev)
 
-=============================================================================
-== Development Tools ==
-=============================================================================
+Installation on Ubuntu/Debian:
+    sudo apt install build-essential libpcre2-dev
 
-- Git - Version control
-- GitHub - Repository hosting and CI/CD
-- VS Code / Cursor - Development environment
-
-=============================================================================
-== Contact ==
-=============================================================================
-
-GitHub: https://github.com/daniil-kranchev/oyster
-Email: nnikus2017@gmail.com
+Installation on Fedora/RHEL:
+    sudo dnf install gcc make pcre2-devel
 
 =============================================================================
 == Disclaimer ==
 =============================================================================
 
-Oyster is an independent project and is not affiliated with,
-endorsed by, or connected to The Perl Foundation, Lua.org,
-Python Software Foundation, or Mozilla Foundation.
+Oyster is an independent project. It is not affiliated with, endorsed by,
+or connected to The Perl Foundation, Lua.org, the Python Software Foundation,
+or the Rust Foundation.
 
-The names "Perl", "Lua", "Python", and "Rust" are trademarks of their
-respective owners.
+All trademarks are the property of their respective owners.
+
+The names "Perl", "Lua", "Python", and "Rust" are used for identification
+purposes only and do not imply any association with the copyright holders.
+
+=============================================================================
+== Contact ==
+=============================================================================
+
+For bug reports, feature requests, or questions:
+
+- GitHub Issues: https://github.com/denrav2019/Oyster-v0.1.0/issues
+- Author Email: nnikus2017@gmail.com
+
+=============================================================================
