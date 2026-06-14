@@ -2,7 +2,7 @@
 
 ```text
 Oyster Programming Language
-Copyright (c) 2024 Daniil Kranchev
+Copyright (c) 2026 Daniil Kranchev
 Licensed under the MIT License.
 
 == Author ==
