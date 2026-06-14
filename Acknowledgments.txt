@@ -1,0 +1,47 @@
+
+---
+
+## 📄 3. `NOTICE` (обновлённый)
+
+```text
+Oyster Programming Language
+Copyright (c) 2024 Daniil Kranchev
+Licensed under the MIT License.
+
+== Author ==
+Daniil Kranchev - Primary author and maintainer
+
+== Special Thanks ==
+
+The Oyster language was inspired by:
+- Perl (Larry Wall) - The original Perl language that inspired Oyster's philosophy
+- Lua (Roberto Ierusalimschy) - For the lightweight VM design inspiration
+- Python (Guido van Rossum) - For the readable syntax patterns
+- Rust (Mozilla/Foundation) - For the memory safety concepts
+
+Development assistance:
+- AI programming assistance (Large Language Model) - Assisted with code generation,
+  architecture design, documentation, and real-time development support during the
+  creation of the Oyster compiler, VM, standard library, and tooling.
+
+== Third-Party Software ==
+
+This software uses the following open source components:
+
+- PCRE2 (Perl Compatible Regular Expressions)
+  Copyright (c) 1997-2023 University of Cambridge
+  License: BSD 3-Clause
+  https://www.pcre.org/
+
+- Standard C Library (libc)
+  Part of the GNU C Library or musl libc
+  License: LGPL / MIT
+
+== Build Dependencies ==
+
+- GCC / Clang - C compiler
+- GNU Make - Build system
+
+== Contact ==
+
+GitHub: https://github.com/daniil-kranchev/oyster

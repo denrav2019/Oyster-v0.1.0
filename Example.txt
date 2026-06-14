@@ -1,0 +1,8 @@
+use "io" as io
+use "math" as m
+
+@content = io.slurp("data.txt")
+print("File size: " . len(@content))
+
+$result = m.sin(m.%PI / 2)
+print("sin(PI/2) = " . $result)
