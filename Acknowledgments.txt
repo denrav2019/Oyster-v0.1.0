@@ -1,7 +1,4 @@
 
----
-
-## 📄 3. `NOTICE` (обновлённый)
 
 ```text
 Oyster Programming Language
