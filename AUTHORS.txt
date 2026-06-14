@@ -1,5 +1,0 @@
-# Oyster Language Authors
-
-Daniil Kranchev - Primary author
-
-# Note: This project does not accept external contributions at this time.
