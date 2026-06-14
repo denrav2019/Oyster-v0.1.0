@@ -1,0 +1,12 @@
+Copyright (c) 2026 Daniil Kranchev
+
+All rights reserved.
+
+This software is licensed under the MIT License.
+See the LICENSE file for details.
+
+For information about authorship and third-party contributions,
+see the NOTICE file.
+
+Oyster Programming Language
+https://github.com/daniil-kranchev/oyster
