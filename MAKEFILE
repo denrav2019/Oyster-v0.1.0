@@ -1,0 +1,112 @@
+# Oyster Language Makefile
+# Copyright (c) 2026 Daniil Kranchev
+# License: MIT
+
+.PHONY: all clean install uninstall test docs examples release
+
+CC = gcc
+CFLAGS = -Wall -Wextra -O2 -std=c11 -D_GNU_SOURCE
+LDFLAGS = -lm -lpcre2-8
+
+VERSION = 0.1.0
+PREFIX = /usr/local
+
+SRCDIR = src
+OBJDIR = obj
+BINDIR = bin
+STDLIBDIR = stdlib
+DOCDIR = docs
+EXAMPLESDIR = examples
+TESTDIR = tests
+
+SOURCES = $(wildcard $(SRCDIR)/*.c)
+OBJECTS = $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+TARGET = $(BINDIR)/oyster
+
+all: $(TARGET)
+
+release: CFLAGS += -DNDEBUG -O3
+release: clean $(TARGET)
+
+$(TARGET): $(OBJECTS)
+	@mkdir -p $(BINDIR)
+	$(CC) $^ -o $@ $(LDFLAGS)
+	@echo "Build complete: $(TARGET)"
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -rf $(OBJDIR) $(BINDIR)
+	find . -name "*.oem" -delete 2>/dev/null || true
+	find . -name "*.oce" -delete 2>/dev/null || true
+	@echo "Clean complete"
+
+install: $(TARGET)
+	@mkdir -p $(PREFIX)/bin
+	@mkdir -p $(PREFIX)/lib/oyster
+	@mkdir -p $(PREFIX)/share/doc/oyster
+	@mkdir -p $(PREFIX)/share/examples/oyster
+	@mkdir -p $(PREFIX)/share/licenses/oyster
+	cp $(TARGET) $(PREFIX)/bin/
+	cp $(STDLIBDIR)/*.oem $(PREFIX)/lib/oyster/ 2>/dev/null || true
+	cp -r $(DOCDIR)/* $(PREFIX)/share/doc/oyster/ 2>/dev/null || true
+	cp -r $(EXAMPLESDIR)/* $(PREFIX)/share/examples/oyster/ 2>/dev/null || true
+	cp LICENSE $(PREFIX)/share/licenses/oyster/
+	cp NOTICE.txt $(PREFIX)/share/licenses/oyster/
+	@echo "Oyster $(VERSION) installed successfully"
+
+uninstall:
+	rm -f $(PREFIX)/bin/oyster
+	rm -rf $(PREFIX)/lib/oyster
+	rm -rf $(PREFIX)/share/doc/oyster
+	rm -rf $(PREFIX)/share/examples/oyster
+	rm -rf $(PREFIX)/share/licenses/oyster
+	@echo "Oyster uninstalled"
+
+test: $(TARGET)
+	@echo "Running tests..."
+	@for test in $(TESTDIR)/*.osf; do \
+		echo "  Running $$test"; \
+		./$(TARGET) run $$test || exit 1; \
+	done
+	@echo "All tests passed!"
+
+docs:
+	@echo "Generating documentation..."
+	@mkdir -p $(DOCDIR)
+	@echo "Documentation ready in $(DOCDIR)/"
+
+examples: $(TARGET)
+	@echo "Building examples..."
+	@for ex in $(EXAMPLESDIR)/*/main.osf; do \
+		dir=$$(dirname $$ex); \
+		echo "  Building $$dir"; \
+		./$(TARGET) compile $$ex -o $$dir/main.oce 2>/dev/null || true; \
+	done
+
+dist: clean docs examples
+	@mkdir -p oyster-$(VERSION)
+	@cp -r $(SRCDIR) Makefile README.md LICENSE NOTICE.txt AUTHORS.txt COPYRIGHT.txt oyster-$(VERSION)/ 2>/dev/null || true
+	@cp -r $(STDLIBDIR) oyster-$(VERSION)/ 2>/dev/null || true
+	@cp -r $(DOCDIR) oyster-$(VERSION)/ 2>/dev/null || true
+	@cp -r $(EXAMPLESDIR) oyster-$(VERSION)/ 2>/dev/null || true
+	@cp -r $(TESTDIR) oyster-$(VERSION)/ 2>/dev/null || true
+	@tar -czf oyster-$(VERSION).tar.gz oyster-$(VERSION)
+	@rm -rf oyster-$(VERSION)
+	@echo "Distribution created: oyster-$(VERSION).tar.gz"
+
+help:
+	@echo "Oyster Language Makefile"
+	@echo ""
+	@echo "Commands:"
+	@echo "  make          - Build Oyster"
+	@echo "  make release  - Build with optimizations"
+	@echo "  make clean    - Remove build artifacts"
+	@echo "  make install  - Install to system"
+	@echo "  make uninstall- Remove from system"
+	@echo "  make test     - Run tests"
+	@echo "  make docs     - Generate documentation"
+	@echo "  make examples - Build examples"
+	@echo "  make dist     - Create distribution tarball"

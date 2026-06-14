@@ -1,0 +1,24 @@
+# Build artifacts
+/bin/
+/obj/
+*.o
+*.a
+*.so
+*.oem
+*.oce
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test artifacts
+*.log
+
+# Distribution
+*.tar.gz
+oyster-*/
