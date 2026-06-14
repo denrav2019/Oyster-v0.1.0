@@ -1,0 +1,98 @@
+Oyster Programming Language
+Copyright (c) 2024 Daniil Kranchev
+Licensed under the MIT License.
+
+=============================================================================
+== Primary Author ==
+=============================================================================
+
+Daniil Kranchev
+Email: nnikus2017@gmail.com
+GitHub: https://github.com/daniil-kranchev
+
+=============================================================================
+== Special Thanks & Inspiration ==
+=============================================================================
+
+The Oyster language was inspired by:
+
+- Perl (Larry Wall)
+  The original Perl language that inspired Oyster's philosophy and syntax.
+  https://www.perl.org/
+
+- Lua (Roberto Ierusalimschy)
+  For the lightweight VM design concepts.
+  https://www.lua.org/
+
+- Python (Guido van Rossum)
+  For the readable syntax patterns and simplicity philosophy.
+  https://www.python.org/
+
+- Rust (Mozilla / Rust Foundation)
+  For memory safety concepts and modern tooling ideas.
+  https://www.rust-lang.org/
+
+=============================================================================
+== Development Assistance ==
+=============================================================================
+
+AI programming assistance (Large Language Model) - Assisted with:
+  • Code generation and architecture design
+  • Documentation writing
+  • Real-time development support during the creation of:
+    - Oyster compiler
+    - Virtual Machine
+    - Standard library (regex, io, net, math, os, json)
+    - Debugger
+    - Tooling and CLI
+
+=============================================================================
+== Third-Party Software ==
+=============================================================================
+
+This software uses the following open source components:
+
+1. PCRE2 (Perl Compatible Regular Expressions)
+   Copyright (c) 1997-2023 University of Cambridge
+   License: BSD 3-Clause
+   Used for: Regular expression support in regex module
+   Website: https://www.pcre.org/
+
+2. Standard C Library (libc)
+   Part of the GNU C Library (glibc) or musl libc
+   License: LGPL / MIT
+   Used for: Core system operations
+
+=============================================================================
+== Build Dependencies ==
+=============================================================================
+
+- GCC (GNU Compiler Collection) or Clang - C compiler
+- GNU Make - Build system
+- PCRE2 development libraries (libpcre2-8-dev)
+
+=============================================================================
+== Development Tools ==
+=============================================================================
+
+- Git - Version control
+- GitHub - Repository hosting and CI/CD
+- VS Code / Cursor - Development environment
+
+=============================================================================
+== Contact ==
+=============================================================================
+
+GitHub: https://github.com/daniil-kranchev/oyster
+Email: nnikus2017@gmail.com
+
+=============================================================================
+== Disclaimer ==
+=============================================================================
+
+Oyster is an independent project and is not affiliated with,
+endorsed by, or connected to The Perl Foundation, Lua.org,
+Python Software Foundation, or Mozilla Foundation.
+
+The names "Perl", "Lua", "Python", and "Rust" are trademarks of their
+respective owners.
